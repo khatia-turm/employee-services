@@ -70,7 +70,7 @@
         </div>
       </div>
       <div class="flex-right">
-        <p class="employee-displayed">0 employees displayed</p>
+        <p class="employee-displayed">9 employees displayed</p>
         <div class="flex--horizontal">
           <div>
             <input
@@ -106,58 +106,79 @@
           placeholder="John Smith"
           class="user-input"
         />
+
         <button type="submit" class="search--submit">search</button>
       </form>
 
-      <form action="" class="search--advanced-form">
-        <label for="name">Name</label>
-        <input type="text" name="name" placeholder="John Smith" id="name" />
-
-        <label for="email">Email</label>
-        <input
-          type="email"
-          name="email"
-          id="email"
-          placeholder="john_smith@leverx.com"
-        />
-        <div class="form-grid-row">
-          <label for="phone">Phone</label>
+      <form action="notfound.html" class="search--advanced-form">
+        <div class="flex-column">
+          <label for="name">Name</label>
           <input
             type="text"
-            name="phone"
-            id="phone"
-            placeholder="Phone number"
-            class="phone-field"
-          />
-
-          <label for="skype">Skype</label>
-          <input
-            type="text"
-            name="skype"
-            id="skype"
-            placeholder="SkypeID"
-            class="skype-field"
+            name="name"
+            placeholder="John Smith"
+            id="name"
+            class="user-input"
           />
         </div>
-        <div class="grid-row-1">
-          <label for="building">Building</label>
-          <select name="building" id="building" class="building-select">
-            <option value="any">Any</option>
+        <div class="flex-column">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="john_smith@leverx.com"
+            class="user-input"
+          />
+        </div>
+        <div class="grid-row-1-2">
+          <div class="flex-column">
+            <label for="phone">Phone</label>
+            <input
+              type="text"
+              name="phone"
+              id="phone"
+              placeholder="Phone number"
+              class="user-input"
+            />
+          </div>
+          <div class="flex-column">
+            <label for="skype">Skype</label>
+
+            <input
+              type="text"
+              name="skype"
+              id="skype"
+              placeholder="SkypeID"
+              class="user-input"
+            />
+          </div>
+        </div>
+        <div class="grid-row-2-3">
+          <div class="flex-column building-input">
+            <label for="building">Building</label>
+            <select name="building" id="building" class="user-input">
+              <option value="any">Any</option>
+            </select>
+          </div>
+
+          <div class="flex-column">
+            <label for="room">Room</label>
+            <input
+              type="text"
+              name="room"
+              id="room"
+              placeholder="303.1"
+              class="user-input"
+            />
+          </div>
+        </div>
+        <div class="flex-column">
+          <label for="department">Department</label>
+          <select id="department" class="user-input">
+            <option>Any</option>
           </select>
-
-          <label for="room">Room</label>
-          <input
-            type="text"
-            name="room"
-            id="room"
-            placeholder="303.1"
-            class="room-input"
-          />
         </div>
-        <label for="department">Department</label>
-        <select id="department" class="department-select">
-          <option>Any</option>
-        </select>
 
         <button type="submit" class="btn search--submit adv">submit</button>
       </form>
