@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>LeverX Employee Services</title>
+  </head>
+  <body>
+    <section class="header flex--horizontal">
+      <div class="header--heading">
+        <h3 class="header--heading-secondary">leverx</h3>
+        <h2 class="heading--heading-main">employee services</h2>
+      </div>
+      <button class="header--active-tab">Address Book</button>
+      <div class="header--right flex--horizontal">
+        <button class="header--support-button flex--horizontal">
+          <ion-icon
+            name="help-circle-outline"
+            class="header--support-icon"
+          ></ion-icon>
+          <p class="header--support">support</p>
+        </button>
+        <button class="header--profile flex--horizontal">
+          <img
+            src="img/steve-cook.jpg"
+            alt="employee steve cook"
+            class="header--employee-img"
+          />
+
+          <p class="header--employee">steve cook</p>
+        </button>
+        <button class="logoff-btn btn">
+          <ion-icon name="power-outline" class="header--logoff"></ion-icon>
+        </button>
+      </div>
+    </section>
+
+    <div class="grid-container">
+      <div class="flex-left">
+        <div class="search--basic-container">
+          <input
+            type="radio"
+            name="search-toggle"
+            class="search__radio--basic"
+            id="search-toggle-basic"
+            checked
+          />
+          <label for="search-toggle-basic" class="search--basic"
+            >basic search</label
+          >
+        </div>
+        <div class="search--advanced-container">
+          <input
+            type="radio"
+            class="search__radio--advanced"
+            name="search-toggle"
+            id="search-toggle-advanced"
+          />
+          <label for="search-toggle-advanced" class="search--advanced"
+            >advanced search</label
+          >
+        </div>
+      </div>
+      <div class="flex-right">
+        <p class="employee-displayed">0 employees displayed</p>
+        <div class="flex--horizontal">
+          <div>
+            <input
+              type="radio"
+              name="view-toggle"
+              class="view__radio--grid"
+              id="view-toggle-grid"
+              checked
+            />
+            <label for="view-toggle-grid" class="view--grid"
+              ><ion-icon name="grid-outline" class="grid--icon"></ion-icon
+            ></label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              name="view-toggle"
+              class="view__radio--menu"
+              id="view-toggle-menu"
+            />
+            <label for="view-toggle-menu" class="view--menu">
+              <ion-icon name="menu-outline" class="menu--icon"></ion-icon
+            ></label>
+          </div>
+        </div>
+      </div>
+
+      <form class="search--basic-form" action="notfound.html">
+        <input
+          type="text"
+          name="user"
+          id="user"
+          placeholder="John Smith"
+          class="user-input"
+        />
+        <button type="submit" class="search--submit">search</button>
+      </form>
+
+      <form action="" class="search--advanced-form">
+        <label for="name">Name</label>
+        <input type="text" name="name" placeholder="John Smith" id="name" />
+
+        <label for="email">Email</label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="john_smith@leverx.com"
+        />
+        <div class="form-grid-row">
+          <label for="phone">Phone</label>
+          <input
+            type="text"
+            name="phone"
+            id="phone"
+            placeholder="Phone number"
+            class="phone-field"
+          />
+
+          <label for="skype">Skype</label>
+          <input
+            type="text"
+            name="skype"
+            id="skype"
+            placeholder="SkypeID"
+            class="skype-field"
+          />
+        </div>
+        <div class="grid-row-1">
+          <label for="building">Building</label>
+          <select name="building" id="building" class="building-select">
+            <option value="any">Any</option>
+          </select>
+
+          <label for="room">Room</label>
+          <input
+            type="text"
+            name="room"
+            id="room"
+            placeholder="303.1"
+            class="room-input"
+          />
+        </div>
+        <label for="department">Department</label>
+        <select id="department" class="department-select">
+          <option>Any</option>
+        </select>
+
+        <button type="submit" class="btn search--submit adv">submit</button>
+      </form>
+
+      <div class="nothing-found">
+        <h3 class="nothing-found--heading">Nothing found</h3>
+        <p>
+          No result match your search. Consider trying different search request
+        </p>
+      </div>
+    </div>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
