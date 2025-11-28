@@ -44,7 +44,7 @@ html {
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: sans-serif;
 }
 
 .btn {
@@ -113,9 +113,15 @@ button {
   font-size: 1.2rem;
 }
 
-.header--support-icon {
+.header--support-icon,
+.header--logoff {
   width: 2rem;
   height: 2rem;
+  color: var(--color-white);
+}
+
+.header--logoff {
+  transform: scale(1.5);
 }
 
 .header--support {
@@ -145,13 +151,10 @@ button {
   color: var(--color-white);
 }
 .header--logoff {
-  width: 2rem;
-  height: 2rem;
   background-color: var(--color-900);
   padding: 0.5rem;
   border-radius: 50%;
   margin-right: 3rem;
-  color: var(--color-white);
 }
 
 /* search */
@@ -209,6 +212,9 @@ button {
   font-size: 2.5rem;
   cursor: pointer;
   color: var(--color-grey);
+
+  width: 2rem;
+  height: 2rem;
 }
 
 .search--basic-form {
@@ -403,6 +409,7 @@ label {
 .employee-menu--img {
   height: 8rem;
   width: 8rem;
+  border-radius: 50%;
 }
 
 .employee-menu--name {
