@@ -205,3 +205,224 @@ btnBasicSubmit.addEventListener("click", (e) => {
 
 // display user dits
 function displayDetailedUser(user) {}
+
+let html = `
+
+<div class="avatar-section">
+        <img
+          src="users/penpen.jpg"
+          alt="employee"
+          class="avatar-section--img"
+        />
+        <h3 class="avatar-section--full">Pen Pen</h3>
+        <p class="avatar-section--native">Pen Pen</p>
+
+        <button class="flex--horizontal avatar-section--copy">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="avatar-section--link icon"
+            viewBox="0 0 512 512"
+          >
+            <path
+              d="M208 352h-64a96 96 0 010-192h64M304 160h64a96 96 0 010 192h-64M163.29 256h187.42"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="36"
+            />
+          </svg>
+          <p>Copy link</p>
+        </button>
+
+        <button class="avatar-section--edit">
+          <div class="flex--horizontal">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="avatar-section--edit-icon icon"
+              viewBox="0 0 512 512"
+            >
+              <path
+                d="M384 224v184a40 40 0 01-40 40H104a40 40 0 01-40-40V168a40 40 0 0140-40h167.48"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="32"
+              />
+              <path
+                d="M459.94 53.25a16.06 16.06 0 00-23.22-.56L424.35 65a8 8 0 000 11.31l11.34 11.32a8 8 0 0011.34 0l12.06-12c6.1-6.09 6.67-16.01.85-22.38zM399.34 90L218.82 270.2a9 9 0 00-2.31 3.93L208.16 299a3.91 3.91 0 004.86 4.86l24.85-8.35a9 9 0 003.93-2.31L422 112.66a9 9 0 000-12.66l-9.95-10a9 9 0 00-12.71 0z"
+              />
+            </svg>
+            <p>edit</p>
+          </div>
+        </button>
+      </div>
+      <div class="details-section">
+        <h2 class="details-section--general">general info</h2>
+        <div class="details-section--row">
+          <div class="flex--horizontal">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="details-section-icon"
+              viewBox="0 0 512 512"
+            >
+              <rect
+                x="32"
+                y="128"
+                width="448"
+                height="320"
+                rx="48"
+                ry="48"
+                fill="none"
+                stroke="currentColor"
+                stroke-linejoin="round"
+                stroke-width="32"
+              />
+              <path
+                d="M144 128V96a32 32 0 0132-32h160a32 32 0 0132 32v32M480 240H32M320 240v24a8 8 0 01-8 8H200a8 8 0 01-8-8v-24"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="32"
+              />
+            </svg>
+            <p>Department:</p>
+          </div>
+          <p><strong>Web & Mobile</strong></p>
+        </div>
+        <div class="details-section--row">
+          <div class="flex--horizontal">
+            <img
+              src="icons/building-regular.svg"
+              class="details-section-icon"
+              alt="building icon"
+            />
+            <p>Building:</p>
+          </div>
+          <p><strong>Street with number(country)</strong></p>
+        </div>
+        <div class="details-section--row">
+          <div class="flex--horizontal">
+            <img
+              src="icons/door-closed-solid.svg"
+              class="details-section-icon"
+              alt="door icon"
+            />
+            <p>Room:</p>
+          </div>
+          <p><strong>1404</strong></p>
+        </div>
+        <div class="details-section--row">
+          <div class="flex--horizontal">
+            <img
+              src="icons/hashtag-solid.svg"
+              class="details-section-icon"
+              alt="hashtag icon"
+            />
+            <p>Desk Number:</p>
+          </div>
+          <p><strong>20</strong></p>
+        </div>
+
+        <div class="details-section--row">
+          <div class="flex--horizontal">
+            <img
+              src="icons/calendar-regular.svg"
+              class="details-section-icon"
+              alt="calendar icon"
+            />
+            <p><strong>Date of Birth:</strong></p>
+          </div>
+          <p>01 Jan 1901</p>
+        </div>
+
+        <div class="details-section--row last">
+          <div class="flex--horizontal">
+            <img
+              src="icons/user-regular.svg"
+              class="details-section-icon"
+              alt="user icon"
+            />
+            <p>Manager:</p>
+          </div>
+          <p><strong>John Snow</strong></p>
+        </div>
+
+        <h2 class="details-section--general">Contacts</h2>
+        <div class="details-section--row">
+          <div class="flex--horizontal">
+            <img
+              src="icons/mobile-screen-button-solid.svg"
+              class="details-section-icon"
+              alt="mobile icon"
+            />
+            <p>Mobile Phone:</p>
+          </div>
+          <p><strong>+99</strong></p>
+        </div>
+        <div class="details-section--row">
+          <div class="flex--horizontal">
+            <img
+              src="icons/at-solid.svg"
+              class="details-section-icon"
+              alt="at icon"
+            />
+            <p>Email:</p>
+          </div>
+          <p><strong>luffy@leverx.com</strong></p>
+        </div>
+        <div class="details-section--row">
+          <div class="flex--horizontal">
+            <!-- sorry, couldn't find zoom icon anywhere -->
+            <img
+              src="icons/display-solid.svg"
+              class="details-section-icon"
+              alt="display icon"
+            />
+            <p>Zoom ID:</p>
+          </div>
+          <p><strong>123-456-789</strong></p>
+        </div>
+        <div class="details-section--row last">
+          <div class="flex--horizontal">
+            <img
+              src="icons/link-solid.svg"
+              class="details-section-icon"
+              alt="link icon"
+            />
+            <p>Zoom Link:</p>
+          </div>
+          <strong
+            ><a href="https://zoom.us/j/1234567890" text="zoom link"
+              >zoom.us/j/1234567890</a
+            ></strong
+          >
+        </div>
+        <h2 class="details-section--general">Travel Info</h2>
+        <div class="details-section--row">
+          <div class="flex--horizontal">
+            <img
+              src="icons/earth-americas-solid.svg"
+              class="details-section-icon"
+              alt="earth icon"
+            />
+            <p>Citizenship:</p>
+          </div>
+          <p><strong>country</strong></p>
+        </div>
+        <div class="details-section--row">
+          <div class="flex--horizontal">
+            <img
+              src="icons/cc-visa-brands-solid.svg"
+              class="details-section-icon"
+              alt="visa icon"
+            />
+            <p>Visa:</p>
+          </div>
+          <!-- make this dynamically loaded ig, cuz it's array in json? -->
+          <p><strong>National bla bla</strong></p>
+        </div>
+      </div>
+`;
