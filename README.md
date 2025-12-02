@@ -74,3 +74,8 @@
 - ✔️ README not customized.
 - remove unused code
 - no need to commit. remove or add into git ignore file .hinttrc
+
+### launching the project
+
+📍 Open `index.html` in VS Code and start **live server**
+to run the application locally
