@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/general.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/details.css" />
+    <title>LeverX Employee Services</title>
+  </head>
+  <body>
+    <header class="header flex--horizontal">
+      <button class="header--heading">
+        <h3 class="header--heading-secondary">leverx</h3>
+        <h2 class="heading--heading-main">employee services</h2>
+      </button>
+      <button class="header--active-tab">Address Book</button>
+      <div class="header--right flex--horizontal">
+        <button class="header--support-button flex--horizontal">
+          <img
+            src="../svgs/support-icon.svg"
+            alt="support icon"
+            class="header--support-icon"
+          />
+          <p class="header--support">support</p>
+        </button>
+        <!-- logged in user --><button
+          class="flex--horizontal header--logged-in"
+          data-id="11"
+        >
+          <img
+            src="../users/anno.jpg"
+            alt="employee anno"
+            class="header--employee-img"
+          />
+
+          <p class="header--employee">Anno Hideaki</p>
+        </button>
+        <button class="header--profile flex--horizontal">
+          <img
+            src="../svgs/log-off-icon.svg"
+            alt="log off icon"
+            class="header--logoff"
+          />
+        </button>
+      </div>
+    </header>
+    <main>
+      <section class="user--details"></section>
+    </main>
+    <script src="../script.js"></script>
+  </body>
+</html>

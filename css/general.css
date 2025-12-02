@@ -1,0 +1,71 @@
+:root {
+  --color-900: #1450af;
+  --color-700: #1e5dbe;
+  --color-500: #5591ff;
+  --color-300: #a5c4fd;
+  --color-white: #fff;
+  --color-font: #3f3e3e;
+  --color-darker-grey: #808080;
+  --color-lighter-grey: #efeff3;
+  --color-grey: #bebebe;
+  --color-purple: #914bb9;
+
+  /* spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 3rem;
+
+  /* border-radius */
+  --radius-small: 0.5rem;
+  --radius-medium: 1rem;
+  --radius-pill: 80px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  /* 1rem = 10px, 10px/16px=62.5 */
+  color: var(--color-font);
+}
+
+body {
+  font-family: sans-serif;
+  background-color: var(--color-lighter-grey);
+}
+
+.hidden {
+  display: none !important;
+}
+
+.flex--horizontal {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+button {
+  background: none;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+}
+
+.clicked {
+  color: var(--color-900) !important;
+}
+
+.active {
+  color: black;
+}

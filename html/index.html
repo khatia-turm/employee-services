@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/general.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+
+    <link rel="icon" type="image/png" href="../svgs/favicon.svg" />
+    <title>LeverX Employee Services</title>
+  </head>
+  <body>
+    <header class="header flex--horizontal">
+      <button class="header--heading">
+        <h3 class="header--heading-secondary">leverx</h3>
+        <h2 class="heading--heading-main">employee services</h2>
+      </button>
+      <button class="header--active-tab">Address Book</button>
+      <div class="header--right flex--horizontal">
+        <button class="header--support-button flex--horizontal">
+          <!-- support icon with header--support-icon -->
+          <img
+            src="../svgs/support-icon.svg"
+            alt="support icon"
+            class="header--support-icon"
+          />
+          <p class="header--support">support</p></button
+        ><button class="flex--horizontal header--logged-in" data-id="11">
+          <img
+            src="../users/anno.jpg"
+            alt="employee anno"
+            class="header--employee-img"
+          />
+
+          <p class="header--employee">Anno Hideaki</p>
+        </button>
+        <button class="header--profile flex--horizontal">
+          <img
+            src="../svgs/log-off-icon.svg"
+            alt="log off icon"
+            class="header--logoff"
+          />
+        </button>
+      </div>
+    </header>
+    <main>
+      <div class="whole--page">
+        <div class="grid-container">
+          <div class="search--container flex--horizontal">
+            <button class="search--basic active">basic search</button>
+            <button class="search--advanced">advanced search</button>
+          </div>
+          <div class="flex-right">
+            <p class="employee-displayed">9 employees displayed</p>
+            <div class="flex--horizontal">
+              <button class="view--grid">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="grid--icon clicked"
+                  viewBox="0 0 512 512"
+                >
+                  <rect
+                    x="48"
+                    y="48"
+                    width="176"
+                    height="176"
+                    rx="20"
+                    ry="20"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="32"
+                  />
+                  <rect
+                    x="288"
+                    y="48"
+                    width="176"
+                    height="176"
+                    rx="20"
+                    ry="20"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="32"
+                  />
+                  <rect
+                    x="48"
+                    y="288"
+                    width="176"
+                    height="176"
+                    rx="20"
+                    ry="20"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="32"
+                  />
+                  <rect
+                    x="288"
+                    y="288"
+                    width="176"
+                    height="176"
+                    rx="20"
+                    ry="20"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="32"
+                  />
+                </svg>
+              </button>
+
+              <button class="view--menu">
+                <!-- menu--icon -->
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="menu--icon"
+                  viewBox="0 0 512 512"
+                >
+                  <path
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-miterlimit="10"
+                    stroke-width="32"
+                    d="M80 160h352M80 256h352M80 352h352"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <form class="search--basic-form">
+            <input
+              type="text"
+              name="user"
+              placeholder="Full Name"
+              class="user-input basic-form--full"
+            />
+
+            <div class="grid-row-1-2">
+              <input
+                type="text"
+                name="name"
+                placeholder="Name"
+                class="user-input basic-form--name"
+              />
+              <input
+                type="text"
+                name="lastName"
+                placeholder="Last Name"
+                class="user-input basic-form--last"
+              />
+            </div>
+
+            <input
+              type="number"
+              name="id"
+              class="user-input input-id"
+              placeholder="ID"
+            />
+
+            <button type="submit" class="search--submit basic--submit">
+              search
+            </button>
+          </form>
+
+          <form class="search--advanced-form hidden">
+            <div class="flex-column">
+              <label for="name">Name</label>
+              <input
+                type="text"
+                name="name"
+                placeholder="John Smith"
+                id="name"
+                class="user-input"
+              />
+            </div>
+            <div class="flex-column">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="john_smith@leverx.com"
+                class="user-input"
+              />
+            </div>
+            <div class="grid-row-1-2">
+              <div class="flex-column">
+                <label for="phone">Phone</label>
+                <input
+                  type="tel"
+                  name="phone"
+                  id="phone"
+                  placeholder="Phone number"
+                  class="user-input"
+                />
+              </div>
+              <div class="flex-column">
+                <label for="skype">Skype</label>
+
+                <input
+                  type="text"
+                  name="skype"
+                  id="skype"
+                  placeholder="SkypeID"
+                  class="user-input"
+                />
+              </div>
+            </div>
+            <div class="grid-row-2-3">
+              <div class="flex-column building-input">
+                <label for="building">Building</label>
+                <select name="building" id="building" class="user-input">
+                  <option value="any">Any</option>
+                </select>
+              </div>
+
+              <div class="flex-column">
+                <label for="room">Room</label>
+                <input
+                  type="text"
+                  name="room"
+                  id="room"
+                  placeholder="303.1"
+                  class="user-input"
+                />
+              </div>
+            </div>
+            <div class="flex-column">
+              <label for="department">Department</label>
+              <select id="department" class="user-input">
+                <option>Any</option>
+              </select>
+            </div>
+
+            <button type="submit" class="search--submit adv">submit</button>
+          </form>
+
+          <div class="employee-grid"></div>
+
+          <div class="employee-menu hidden">
+            <div class="first-row">
+              <div class="flex--horizontal">
+                <img
+                  src="../svgs/circle-icon.svg"
+                  alt="photo icon"
+                  class="icon"
+                />
+                <p>Photo</p>
+              </div>
+
+              <div class="flex--horizontal">
+                <img src="../svgs/user-icon.svg" alt="user icon" class="icon" />
+                <p>Name</p>
+              </div>
+
+              <div class="flex--horizontal">
+                <img
+                  src="../svgs/briefcase-icon.svg"
+                  alt="department icon"
+                  class="icon"
+                />
+                <p>Department</p>
+              </div>
+
+              <div class="flex--horizontal">
+                <img src="../svgs/door-icon.svg" alt="room icon" class="icon" />
+                <p>Room</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nothing--found hidden">
+        <img
+          src="../svgs/not-found.jpg"
+          alt="nothing found"
+          class="nothing-found"
+        />
+        <button class="go-back">go back to main page</button>
+      </div>
+    </main>
+
+    <script src="../script.js"></script>
+  </body>
+</html>

@@ -371,5 +371,43 @@
         "end_date": 1683608400000
       }
     ]
+  },
+
+  {
+    "_id": "11",
+    "isRemoteWork": false,
+    "user_avatar": "users/anno.jpg",
+    "first_name": "Anno",
+    "last_name": "Hideaki",
+    "first_native_name": "Anno",
+    "last_native_name": "Hideaki",
+    "middle_native_name": "H.",
+    "department": "Manager",
+    "building": "Pilsudskiego 69 (Poland)",
+    "room": "1000",
+    "date_birth": {
+      "year": 1960,
+      "month": 4,
+      "day": 22
+    },
+    "desk_number": 11,
+    "manager": {
+      "id": "11",
+      "first_name": "Anno",
+      "last_name": "Hideaki"
+    },
+    "phone": "+12931293129",
+    "email": "anno.hideaki@leverx.com",
+    "zoom_id": "123-456-7890",
+    "zoom_link": "https://zoom.us/j/1234567890",
+    "citizenship": "Georgia",
+    "visa": [
+      {
+        "issuing_country": "Japanese",
+        "type": "National visa type D",
+        "start_date": 1652158800000,
+        "end_date": 1683608400000
+      }
+    ]
   }
 ]
