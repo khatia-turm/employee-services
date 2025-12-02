@@ -9,12 +9,19 @@
         "label": "off"
       }
     ],
+<<<<<<< HEAD
     "button-type": "off",
     "axe/name-role-value": [
       "default",
       {
         "button-name": "off",
         "link-name": "off"
+=======
+    "axe/name-role-value": [
+      "default",
+      {
+        "button-name": "off"
+>>>>>>> e880661c4a138a22966e4bb30e52770a625fea47
       }
     ]
   }

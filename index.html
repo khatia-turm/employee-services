@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>LeverX Employee Services</title>
+  </head>
+  <body>
+    <section class="header flex--horizontal">
+      <div class="header--heading">
+        <h3 class="header--heading-secondary">leverx</h3>
+        <h2 class="heading--heading-main">employee services</h2>
+      </div>
+      <button class="header--active-tab">Address Book</button>
+      <div class="header--right flex--horizontal">
+        <button class="header--support-button flex--horizontal">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="header--support-icon"
+            viewBox="0 0 512 512"
+          >
+            <path
+              d="M256 80a176 176 0 10176 176A176 176 0 00256 80z"
+              fill="none"
+              stroke="currentColor"
+              stroke-miterlimit="10"
+              stroke-width="32"
+            />
+            <path
+              d="M200 202.29s.84-17.5 19.57-32.57C230.68 160.77 244 158.18 256 158c10.93-.14 20.69 1.67 26.53 4.45 10 4.76 29.47 16.38 29.47 41.09 0 26-17 37.81-36.37 50.8S251 281.43 251 296"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-miterlimit="10"
+              stroke-width="28"
+            />
+            <circle cx="250" cy="348" r="20" />
+          </svg>
+          <p class="header--support">support</p>
+        </button>
+        <button class="header--profile flex--horizontal">
+          <img
+            src="img/steve-cook.jpg"
+            alt="employee steve cook"
+            class="header--employee-img"
+          />
+
+          <p class="header--employee">steve cook</p>
+        </button>
+        <button class="logoff-btn btn">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="header--logoff"
+            viewBox="0 0 512 512"
+          >
+            <path
+              d="M378 108a191.41 191.41 0 0170 148c0 106-86 192-192 192S64 362 64 256a192 192 0 0169-148M256 64v192"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="32"
+            />
+          </svg>
+        </button>
+      </div>
+    </section>
+
+    <div class="grid-container">
+      <div class="flex-left">
+        <div class="search--basic-container">
+          <input
+            type="radio"
+            name="search-toggle"
+            class="search__radio--basic"
+            id="search-toggle-basic"
+            checked
+          />
+          <label for="search-toggle-basic" class="search--basic"
+            >basic search</label
+          >
+        </div>
+        <div class="search--advanced-container">
+          <input
+            type="radio"
+            class="search__radio--advanced"
+            name="search-toggle"
+            id="search-toggle-advanced"
+          />
+          <label for="search-toggle-advanced" class="search--advanced"
+            >advanced search</label
+          >
+        </div>
+      </div>
+      <div class="flex-right">
+        <p class="employee-displayed">9 employees displayed</p>
+        <div class="flex--horizontal">
+          <div>
+            <input
+              type="radio"
+              name="view-toggle"
+              class="view__radio--grid"
+              id="view-toggle-grid"
+              checked
+            />
+            <label for="view-toggle-grid" class="view--grid"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="grid--icon"
+                viewBox="0 0 512 512"
+              >
+                <rect
+                  x="48"
+                  y="48"
+                  width="176"
+                  height="176"
+                  rx="20"
+                  ry="20"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="32"
+                />
+                <rect
+                  x="288"
+                  y="48"
+                  width="176"
+                  height="176"
+                  rx="20"
+                  ry="20"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="32"
+                />
+                <rect
+                  x="48"
+                  y="288"
+                  width="176"
+                  height="176"
+                  rx="20"
+                  ry="20"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="32"
+                />
+                <rect
+                  x="288"
+                  y="288"
+                  width="176"
+                  height="176"
+                  rx="20"
+                  ry="20"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="32"
+                /></svg
+            ></label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              name="view-toggle"
+              class="view__radio--menu"
+              id="view-toggle-menu"
+            />
+            <label for="view-toggle-menu" class="view--menu">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="menu--icon"
+                viewBox="0 0 512 512"
+              >
+                <path
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-miterlimit="10"
+                  stroke-width="32"
+                  d="M80 160h352M80 256h352M80 352h352"
+                /></svg
+            ></label>
+          </div>
+        </div>
+      </div>
+
+      <form class="search--basic-form" action="notfound.html">
+        <input
+          type="text"
+          name="user"
+          id="user"
+          placeholder="John Smith"
+          class="user-input"
+        />
+
+        <button type="submit" class="search--submit">search</button>
+      </form>
+
+      <form action="notfound.html" class="search--advanced-form">
+        <div class="flex-column">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            name="name"
+            placeholder="John Smith"
+            id="name"
+            class="user-input"
+          />
+        </div>
+        <div class="flex-column">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="john_smith@leverx.com"
+            class="user-input"
+          />
+        </div>
+        <div class="grid-row-1-2">
+          <div class="flex-column">
+            <label for="phone">Phone</label>
+            <input
+              type="text"
+              name="phone"
+              id="phone"
+              placeholder="Phone number"
+              class="user-input"
+            />
+          </div>
+          <div class="flex-column">
+            <label for="skype">Skype</label>
+
+            <input
+              type="text"
+              name="skype"
+              id="skype"
+              placeholder="SkypeID"
+              class="user-input"
+            />
+          </div>
+        </div>
+        <div class="grid-row-2-3">
+          <div class="flex-column building-input">
+            <label for="building">Building</label>
+            <select name="building" id="building" class="user-input">
+              <option value="any">Any</option>
+            </select>
+          </div>
+
+          <div class="flex-column">
+            <label for="room">Room</label>
+            <input
+              type="text"
+              name="room"
+              id="room"
+              placeholder="303.1"
+              class="user-input"
+            />
+          </div>
+        </div>
+        <div class="flex-column">
+          <label for="department">Department</label>
+          <select id="department" class="user-input">
+            <option>Any</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn search--submit adv">submit</button>
+      </form>
+
+      <div class="employee-grid">
+        <div class="employee-ind">
+          <img
+            src="img/brendan-krueger.jpg"
+            alt="brendan krueger"
+            class="employee-grid--img"
+          />
+          <p class="employee-grid--name">Brendan Krueger</p>
+          <span class="border"></span>
+          <div class="employee--flex-container">
+            <div class="employee--flex-item">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="employee--icon"
+                viewBox="0 0 512 512"
+              >
+                <rect
+                  x="32"
+                  y="128"
+                  width="448"
+                  height="320"
+                  rx="48"
+                  ry="48"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linejoin="round"
+                  stroke-width="32"
+                />
+                <path
+                  d="M144 128V96a32 32 0 0132-32h160a32 32 0 0132 32v32M480 240H32M320 240v24a8 8 0 01-8 8H200a8 8 0 01-8-8v-24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="32"
+                />
+              </svg>
+              <p class="employee-grid-job">Web & Mobile</p>
+            </div>
+            <div class="employee--flex-item">
+              <svg
+                class="employee--icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+              >
+                <path
+                  d="M256 160c16-63.16 76.43-95.41 208-96a15.94 15.94 0 0116 16v288a16 16 0 01-16 16c-128 0-177.45 25.81-208 64-30.37-38-80-64-208-64-9.88 0-16-8.05-16-17.93V80a15.94 15.94 0 0116-16c131.57.59 192 32.84 208 96zM256 160v288"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="32"
+                />
+              </svg>
+              <p class="employee-grid-job">LPT1403</p>
+            </div>
+          </div>
+        </div>
+        <div class="employee-ind">
+          <img
+            src="img/andrew-savage.jpg"
+            alt="andrew-savage"
+            class="employee-grid--img"
+          />
+          <p class="employee-grid--name">Sndrew Savage</p>
+          <span class="border"></span>
+          <div class="employee--flex-container">
+            <div class="employee--flex-item">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="employee--icon"
+                viewBox="0 0 512 512"
+              >
+                <rect
+                  x="32"
+                  y="128"
+                  width="448"
+                  height="320"
+                  rx="48"
+                  ry="48"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linejoin="round"
+                  stroke-width="32"
+                />
+                <path
+                  d="M144 128V96a32 32 0 0132-32h160a32 32 0 0132 32v32M480 240H32M320 240v24a8 8 0 01-8 8H200a8 8 0 01-8-8v-24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="32"
+                />
+              </svg>
+              <p class="employee-grid-job">Web & Mobile</p>
+            </div>
+            <div class="employee--flex-item">
+              <svg
+                class="employee--icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+              >
+                <path
+                  d="M256 160c16-63.16 76.43-95.41 208-96a15.94 15.94 0 0116 16v288a16 16 0 01-16 16c-128 0-177.45 25.81-208 64-30.37-38-80-64-208-64-9.88 0-16-8.05-16-17.93V80a15.94 15.94 0 0116-16c131.57.59 192 32.84 208 96zM256 160v288"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="32"
+                />
+              </svg>
+              <p class="employee-grid-job">LPT1403</p>
+            </div>
+          </div>
+        </div>
+        <div class="employee-ind">
+          <img
+            src="img/lula-aguilar.jpg"
+            alt="lula-aguilar"
+            class="employee-grid--img"
+          />
+          <p class="employee-grid--name">Lula Aguilar</p>
+          <span class="border"></span>
+          <div class="employee--flex-container">
+            <div class="employee--flex-item">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="employee--icon"
+                viewBox="0 0 512 512"
+              >
+                <rect
+                  x="32"
+                  y="128"
+                  width="448"
+                  height="320"
+                  rx="48"
+                  ry="48"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linejoin="round"
+                  stroke-width="32"
+                />
+                <path
+                  d="M144 128V96a32 32 0 0132-32h160a32 32 0 0132 32v32M480 240H32M320 240v24a8 8 0 01-8 8H200a8 8 0 01-8-8v-24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="32"
+                />
+              </svg>
+              <p class="employee-grid-job">Web & Mobile</p>
+            </div>
+            <div class="employee--flex-item">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="employee--icon"
+                viewBox="0 0 512 512"
+              >
+                <path
+                  d="M256 160c16-63.16 76.43-95.41 208-96a15.94 15.94 0 0116 16v288a16 16 0 01-16 16c-128 0-177.45 25.81-208 64-30.37-38-80-64-208-64-9.88 0-16-8.05-16-17.93V80a15.94 15.94 0 0116-16c131.57.59 192 32.84 208 96zM256 160v288"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="32"
+                />
+              </svg>
+              <p class="employee-grid-job">LPT1403</p>
+            </div>
+          </div>
+        </div>
+        <div class="employee-ind">
+          <img
+            src="img/fintan-cruz.jpg"
+            alt="fintan-cruz"
+            class="employee-grid--img"
+          />
+          <p class="employee-grid--name">Fintan Cruz</p>
+          <span class="border"></span>
+          <div class="employee--flex-container">
+            <div class="employee--flex-item">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="employee--icon"
+                viewBox="0 0 512 512"
+              >
+                <rect
+                  x="32"
+                  y="128"
+                  width="448"
+                  height="320"
+                  rx="48"
+                  ry="48"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linejoin="round"
+                  stroke-width="32"
+                />
+                <path
+                  d="M144 128V96a32 32 0 0132-32h160a32 32 0 0132 32v32M480 240H32M320 240v24a8 8 0 01-8 8H200a8 8 0 01-8-8v-24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="32"
+                />
+              </svg>
+              <p class="employee-grid-job">Web & Mobile</p>
+            </div>
+            <div class="employee--flex-item">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="employee--icon"
+                viewBox="0 0 512 512"
+                class="employee-icon"
+              >
+                <path
+                  d="M256 160c16-63.16 76.43-95.41 208-96a15.94 15.94 0 0116 16v288a16 16 0 01-16 16c-128 0-177.45 25.81-208 64-30.37-38-80-64-208-64-9.88 0-16-8.05-16-17.93V80a15.94 15.94 0 0116-16c131.57.59 192 32.84 208 96zM256 160v288"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="32"
+                />
+              </svg>
+              <p class="employee-grid-job">LPT1403</p>
+            </div>
+          </div>
+        </div>
+        <div class="employee-ind">
+          <img
+            src="img/suzanne-taylor.jpg"
+            alt="suzanne-taylor"
+            class="employee-grid--img"
+          />
+          <p class="employee-grid--name">Suzanne Taylor</p>
+          <span class="border"></span>
+          <div class="employee--flex-container">
+            <div class="employee--flex-item">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="employee--icon"
+                viewBox="0 0 512 512"
+              >
+                <rect
+                  x="32"
+                  y="128"
+                  width="448"
+                  height="320"
+                  rx="48"
+                  ry="48"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linejoin="round"
+                  stroke-width="32"
+                />
+                <path
+                  d="M144 128V96a32 32 0 0132-32h160a32 32 0 0132 32v32M480 240H32M320 240v24a8 8 0 01-8 8H200a8 8 0 01-8-8v-24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="32"
+                />
+              </svg>
+              <p class="employee-grid-job">Web & Mobile</p>
+            </div>
+            <div class="employee--flex-item">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="employee--icon"
+                viewBox="0 0 512 512"
+              >
+                <path
+                  d="M256 160c16-63.16 76.43-95.41 208-96a15.94 15.94 0 0116 16v288a16 16 0 01-16 16c-128 0-177.45 25.81-208 64-30.37-38-80-64-208-64-9.88 0-16-8.05-16-17.93V80a15.94 15.94 0 0116-16c131.57.59 192 32.84 208 96zM256 160v288"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="32"
+                />
+              </svg>
+              <p class="employee-grid-job">LPT1403</p>
+            </div>
+          </div>
+        </div>
+        <div class="employee-ind">
+          <img
+            src="img/francesco-reed.jpg"
+            alt="francesco-reed"
+            class="employee-grid--img"
+          />
+          <p class="employee-grid--name">Francesco Reed</p>
+          <span class="border"></span>
+          <div class="employee--flex-container">
+            <div class="employee--flex-item">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="employee--icon"
+                viewBox="0 0 512 512"
+              >
+                <rect
+                  x="32"
+                  y="128"
+                  width="448"
+                  height="320"
+                  rx="48"
+                  ry="48"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linejoin="round"
+                  stroke-width="32"
+                />
+                <path
+                  d="M144 128V96a32 32 0 0132-32h160a32 32 0 0132 32v32M480 240H32M320 240v24a8 8 0 01-8 8H200a8 8 0 01-8-8v-24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="32"
+                />
+              </svg>
+              <p class="employee-grid-job">Web & Mobile</p>
+            </div>
+            <div class="employee--flex-item">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="employee--icon"
+                viewBox="0 0 512 512"
+              >
+                <path
+                  d="M256 160c16-63.16 76.43-95.41 208-96a15.94 15.94 0 0116 16v288a16 16 0 01-16 16c-128 0-177.45 25.81-208 64-30.37-38-80-64-208-64-9.88 0-16-8.05-16-17.93V80a15.94 15.94 0 0116-16c131.57.59 192 32.84 208 96zM256 160v288"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="32"
+                />
+              </svg>
+              <p class="employee-grid-job">LPT1403</p>
+            </div>
+          </div>
+        </div>
+        <div class="employee-ind">
+          <img
+            src="img/arman-eaton.jpg"
+            alt="arman-eaton"
+            class="employee-grid--img"
+          />
+          <p class="employee-grid--name">Arman Eaton</p>
+          <span class="border"></span>
+          <div class="employee--flex-container">
+            <div class="employee--flex-item">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="employee--icon"
+                viewBox="0 0 512 512"
+              >
+                <rect
+                  x="32"
+                  y="128"
+                  width="448"
+                  height="320"
+                  rx="48"
+                  ry="48"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linejoin="round"
+                  stroke-width="32"
+                />
+                <path
+                  d="M144 128V96a32 32 0 0132-32h160a32 32 0 0132 32v32M480 240H32M320 240v24a8 8 0 01-8 8H200a8 8 0 01-8-8v-24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="32"
+                />
+              </svg>
+              <p class="employee-grid-job">Web & Mobile</p>
+            </div>
+            <div class="employee--flex-item">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="employee--icon"
+                viewBox="0 0 512 512"
+              >
+                <path
+                  d="M256 160c16-63.16 76.43-95.41 208-96a15.94 15.94 0 0116 16v288a16 16 0 01-16 16c-128 0-177.45 25.81-208 64-30.37-38-80-64-208-64-9.88 0-16-8.05-16-17.93V80a15.94 15.94 0 0116-16c131.57.59 192 32.84 208 96zM256 160v288"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="32"
+                />
+              </svg>
+              <p class="employee-grid-job">LPT1403</p>
+            </div>
+          </div>
+        </div>
+        <div class="employee-ind">
+          <img
+            src="img/luis-baker.jpg"
+            alt="luis-baker"
+            class="employee-grid--img"
+          />
+          <p class="employee-grid--name">Luis Baker</p>
+          <span class="border"></span>
+          <div class="employee--flex-container">
+            <div class="employee--flex-item">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="employee--icon"
+                viewBox="0 0 512 512"
+              >
+                <rect
+                  x="32"
+                  y="128"
+                  width="448"
+                  height="320"
+                  rx="48"
+                  ry="48"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linejoin="round"
+                  stroke-width="32"
+                />
+                <path
+                  d="M144 128V96a32 32 0 0132-32h160a32 32 0 0132 32v32M480 240H32M320 240v24a8 8 0 01-8 8H200a8 8 0 01-8-8v-24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="32"
+                />
+              </svg>
+              <p class="employee-grid-job">Web & Mobile</p>
+            </div>
+            <div class="employee--flex-item">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="employee--icon"
+                viewBox="0 0 512 512"
+              >
+                <path
+                  d="M256 160c16-63.16 76.43-95.41 208-96a15.94 15.94 0 0116 16v288a16 16 0 01-16 16c-128 0-177.45 25.81-208 64-30.37-38-80-64-208-64-9.88 0-16-8.05-16-17.93V80a15.94 15.94 0 0116-16c131.57.59 192 32.84 208 96zM256 160v288"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="32"
+                />
+              </svg>
+              <p class="employee-grid-job">LPT1403</p>
+            </div>
+          </div>
+        </div>
+        <div class="employee-ind">
+          <img
+            src="img/felicia-lee.jpg"
+            alt="felicia-lee"
+            class="employee-grid--img"
+          />
+          <p class="employee-grid--name">Felicia Lee</p>
+          <span class="border"></span>
+          <div class="employee--flex-container">
+            <div class="employee--flex-item">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="employee--icon"
+                viewBox="0 0 512 512"
+              >
+                <rect
+                  x="32"
+                  y="128"
+                  width="448"
+                  height="320"
+                  rx="48"
+                  ry="48"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linejoin="round"
+                  stroke-width="32"
+                />
+                <path
+                  d="M144 128V96a32 32 0 0132-32h160a32 32 0 0132 32v32M480 240H32M320 240v24a8 8 0 01-8 8H200a8 8 0 01-8-8v-24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="32"
+                />
+              </svg>
+              <p class="employee-grid-job">Web & Mobile</p>
+            </div>
+            <div class="employee--flex-item">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="employee--icon"
+                viewBox="0 0 512 512"
+              >
+                <path
+                  d="M256 160c16-63.16 76.43-95.41 208-96a15.94 15.94 0 0116 16v288a16 16 0 01-16 16c-128 0-177.45 25.81-208 64-30.37-38-80-64-208-64-9.88 0-16-8.05-16-17.93V80a15.94 15.94 0 0116-16c131.57.59 192 32.84 208 96zM256 160v288"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="32"
+                />
+              </svg>
+              <p class="employee-grid-job">LPT1403</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="employee-menu">
+        <div class="first-row">
+          <div class="flex--horizontal">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon"
+              viewBox="0 0 512 512"
+            >
+              <circle
+                cx="256"
+                cy="256"
+                r="192"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="32"
+              />
+            </svg>
+            <p>Photo</p>
+          </div>
+
+          <div class="flex--horizontal">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon"
+              viewBox="0 0 512 512"
+            >
+              <path
+                d="M344 144c-3.92 52.87-44 96-88 96s-84.15-43.12-88-96c-4-55 35-96 88-96s92 42 88 96z"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="32"
+              />
+              <path
+                d="M256 304c-87 0-175.3 48-191.64 138.6C62.39 453.52 68.57 464 80 464h352c11.44 0 17.62-10.48 15.65-21.4C431.3 352 343 304 256 304z"
+                fill="none"
+                stroke="currentColor"
+                stroke-miterlimit="10"
+                stroke-width="32"
+              />
+            </svg>
+            <p>Name</p>
+          </div>
+
+          <div class="flex--horizontal">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon"
+              viewBox="0 0 512 512"
+            >
+              <rect
+                x="32"
+                y="128"
+                width="448"
+                height="320"
+                rx="48"
+                ry="48"
+                fill="none"
+                stroke="currentColor"
+                stroke-linejoin="round"
+                stroke-width="32"
+              />
+              <path
+                d="M144 128V96a32 32 0 0132-32h160a32 32 0 0132 32v32M480 240H32M320 240v24a8 8 0 01-8 8H200a8 8 0 01-8-8v-24"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="32"
+              />
+            </svg>
+            <p>Department</p>
+          </div>
+
+          <div class="flex--horizontal">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon"
+              viewBox="0 0 512 512"
+              class="icon"
+            >
+              <path
+                d="M256 160c16-63.16 76.43-95.41 208-96a15.94 15.94 0 0116 16v288a16 16 0 01-16 16c-128 0-177.45 25.81-208 64-30.37-38-80-64-208-64-9.88 0-16-8.05-16-17.93V80a15.94 15.94 0 0116-16c131.57.59 192 32.84 208 96zM256 160v288"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="32"
+              />
+            </svg>
+            <p>Room</p>
+          </div>
+        </div>
+
+        <div class="employee-row">
+          <img
+            src="img/brendan-krueger.jpg"
+            alt="brendan krueger"
+            class="employee-menu--img"
+          />
+          <p class="employee-menu--name">Brendan Krueger</p>
+          <p class="employee-menu--department">Web & Mobile</p>
+          <p class="employee-menu--room">LPT1403</p>
+        </div>
+
+        <div class="employee-row">
+          <img
+            src="img/andrew-savage.jpg"
+            alt="andrew-savage"
+            class="employee-menu--img"
+          />
+          <p class="employee-menu--name">Andrew Savage</p>
+          <p class="employee-menu--department">Web & Mobile</p>
+          <p class="employee-menu--room">LPT1403</p>
+        </div>
+
+        <div class="employee-row">
+          <img
+            src="img/lula-aguilar.jpg"
+            alt="lula aguilar"
+            class="employee-menu--img"
+          />
+          <p class="employee-menu--name">Lula Aguilar</p>
+          <p class="employee-menu--department">Web & Mobile</p>
+          <p class="employee-menu--room">LPT1403</p>
+        </div>
+
+        <div class="employee-row">
+          <img
+            src="img/fintan-cruz.jpg"
+            alt="fintan cruz"
+            class="employee-menu--img"
+          />
+          <p class="employee-menu--name">Fintan Cruiz</p>
+          <p class="employee-menu--department">Web & Mobile</p>
+          <p class="employee-menu--room">LPT1403</p>
+        </div>
+
+        <div class="employee-row">
+          <img
+            src="img/suzanne-taylor.jpg"
+            alt="suzanne-taylor"
+            class="employee-menu--img"
+          />
+          <p class="employee-menu--name">Suzanne Taylor</p>
+          <p class="employee-menu--department">Web & Mobile</p>
+          <p class="employee-menu--room">LPT1403</p>
+        </div>
+
+        <div class="employee-row">
+          <img
+            src="img/francesco-reed.jpg"
+            alt="francesco-reed"
+            class="employee-menu--img"
+          />
+          <p class="employee-menu--name">Francesco Reed</p>
+          <p class="employee-menu--department">Web & Mobile</p>
+          <p class="employee-menu--room">LPT1403</p>
+        </div>
+
+        <div class="employee-row">
+          <img
+            src="img/arman-eaton.jpg"
+            alt="arman-eaton"
+            class="employee-menu--img"
+          />
+          <p class="employee-menu--name">Arman Eaton</p>
+          <p class="employee-menu--department">Web & Mobile</p>
+          <p class="employee-menu--room">LPT1403</p>
+        </div>
+
+        <div class="employee-row">
+          <img
+            src="img/luis-baker.jpg"
+            alt="luis-baker"
+            class="employee-menu--img"
+          />
+          <p class="employee-menu--name">Luis Baker</p>
+          <p class="employee-menu--department">Web & Mobile</p>
+          <p class="employee-menu--room">LPT1403</p>
+        </div>
+
+        <div class="employee-row">
+          <img
+            src="img/felicia-lee.jpg"
+            alt="felicia-lee"
+            class="employee-menu--img"
+          />
+          <p class="employee-menu--name">Felicia Lee</p>
+          <p class="employee-menu--department">Web & Mobile</p>
+          <p class="employee-menu--room">LPT1403</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
