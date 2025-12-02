@@ -79,3 +79,11 @@
 
 📍 Open `index.html` in VS Code and start **live server**
 to run the application locally
+
+# MERGE CONFLICT
+
+i didn't pull from main before starting homework 2,
+homework 1 wasn't even merged. but after creating MR for homework 2 i had some merge conflicts, that I didn't notice.
+when i did notice it was already past the deadline, but i pulled main anyway and deleted the files it added from main. I'm so sorry about this.
+I created MR at 6am my time, and that's when I was finished with it.
+I'm sorry for not noticing merge conflicts sooner.
