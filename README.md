@@ -1,93 +1,89 @@
-# Khatia Turmanidze
+# User Stories checked:
 
+1. created JSON file with mocked data for all users ✔️
+2. used fetch API to retrieve said data ✔️
+3. rendered users ✔️
+4. implemented switch between layours using JS, both list view and grid view ✔️
+5. Implement basic search ✔️
+6. Users list Not Found Page is no longer a separate page ✔️
+7. Implement User details HTML page ✔️
+8. integrate JS to display user details HTML page ✔️
+9. open user details page from the Page header ✔️
+10. if user is not found, user details not found page should be displayed ✔️
+11. header should be interactive ✔️
+12. all the components (apart from support/edit/logout) should be interactive ✔️
 
+# user stories: 1-3
 
-## Getting started
+- created json file with all user data
+- used fetch to retrieve it asynchronously
+- stored the users in global users array so every function can access it, avoiding async timing issues
+- once fetched, calling initApp() which loops through users and calls renderUserBasicGrid() and renderUserBasicList()
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+# user story: 4
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+- created two containers gridView and listView
+- I wasn't sure if I should have rendered different ones after clicking the view icons, so simply used toggleViews function
 
-## Add your files
+# user story: 5
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/topics/git/add_files/#add-files-to-a-git-repository) or push an existing Git repository with the following command:
+- used Array.find() on users to find a match
+- cleared input fields after search
+- if match exists, switching window.location.href to userDetails.html pages, I really couldn't find better way
 
-```
-cd existing_repo
-git remote add origin https://frontend-course-2025-gitlab.codelx.dev/fe/khatia-turmanidze.git
-git branch -M main
-git push -uf origin main
-```
+# user stories: 6,10
 
-## Integrate with your tools
+- originally I tried a trick to save original HTML into a variable, render not found page with js in its place, but that way I had to write restore function that redoes
+  almost everything in js, attaching event handles and redeclaring variables
+- instead, it's simply toggling hidden class 😁
+- togglePage(showPage) just toggles .hidden on both the main and the not found page
 
-- [ ] [Set up project integrations](https://frontend-course-2025-gitlab.codelx.dev/fe/khatia-turmanidze/-/settings/integrations)
+# user stories: 7-9
 
-## Collaborate with your team
+- grab id from URL params using URLSearchParams
+- with it find user in users array
+- rendered detailed HTML using displayDetailedUser(user)
+- dynamic rendering of visa array, showing validity and marking expired ones. every user in data.json has same visa array, but functionality is there
+- event listeners inside this are attached after the elements exist
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/user/project/merge_requests/auto_merge/)
+# user stories: 9, 11-12
 
-## Test and Deploy
+- each employee has data-id, clicking it triggers navigation to that user's details page
+- also used event delication to have one event listener
+  on whole container, if target matches employee class then switch happens
 
-Use the built-in continuous integration in GitLab.
+# notes:
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+- refactored repeated code in displayDetailedUsers() as much as I could with createRow() and createVisaRows()
+- formatting dates consistenly
+- copy link functionality using navigator.clipboard.writeText(window.location.href)
 
-***
+# hw-1 fixes
 
-# Editing this README
+- ✔️ duplicate class names in svgs
+- ✔️ look through media queries
+- ✔️ use <header> & <main>
+- ✔️remove links or download them and use them locally
+- ✔️type="tel" in form input for phone number
+- ✔️Web page doesn't have favicon.
+- ✔️ MR title shoud be a bit more informative (e.g. "[HM 1] Implement HTML/CSS for LeverX Employee Services").
+- ✔️ The single CSS file contains everything (e.g. variables, reset/normalize styles, etc.), it's better to split it into several files.
+- ✔️Duplicating the same SVGs. For optimization, you could define them once in <defs> and reuse via <use>.
+- ✔️ Consider CSS variables for spacing, many hardcoded values that could be reused.
+- ✔️ Icon folder contains SVGs that are not referenced anywhere.
+- ✔️ README not customized.
+- remove unused code
+- no need to commit. remove or add into git ignore file .hinttrc
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
+### launching the project
 
-## Suggestions for a good README
+📍 Open `index.html` in VS Code and start **live server**
+to run the application locally
 
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+# MERGE CONFLICT
 
-## Name
-Choose a self-explaining name for your project.
-
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
-
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
-
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
-
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
-
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
-
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
-
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
-
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
-
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
-
-## License
-For open source projects, say how it is licensed.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+i didn't pull from main before starting homework 2,
+homework 1 wasn't even merged. but after creating MR for homework 2 i had some merge conflicts, that I didn't notice.
+when i did notice it was already past the deadline, but i pulled main anyway and deleted the files it added from main. I'm so sorry about this.
+I created MR at 6am my time, and that's when I was finished with it.
+I'm sorry for not noticing merge conflicts sooner.

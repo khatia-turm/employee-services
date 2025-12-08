@@ -1,0 +1,108 @@
+/*  details*/
+
+.avatar-section--img {
+  width: 20rem;
+  height: 20rem;
+  border-radius: 50%;
+}
+
+.user--details {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  margin: 1rem 4rem;
+  background-color: var(--color-white);
+  border-radius: 2px;
+}
+
+.avatar-section {
+  padding: 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  border-right: 1px solid var(--color-lighter-grey);
+}
+
+.avatar-section--full {
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+.avatar-section--native {
+  color: var(--color-darker-grey);
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.avatar-section--copy {
+  background-color: var(--color-lighter-grey);
+  color: var(--color-darker-grey);
+  padding: 1rem;
+  font-size: 1.5rem;
+  border-radius: 80px;
+  margin-bottom: 1rem;
+}
+
+.avatar-section--link {
+  height: 2rem;
+}
+
+.avatar-section--edit {
+  text-transform: uppercase;
+  font-weight: 550;
+
+  padding: 1rem;
+  border-radius: 2px;
+  border: 1px solid var(--color-lighter-grey);
+}
+
+/* .details--section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+} */
+.details-section {
+  padding: 5rem;
+  font-size: 2rem;
+  color: var(--color-darker-grey);
+}
+.details-section-icon {
+  font-size: 2.5rem;
+  /* some are icons with svg elements, some are
+  already colored downloads with img element,
+  this is needed for the first one */
+  color: var(--color-500);
+  width: 2rem;
+  height: 2rem;
+}
+.details-section--row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.details-section--general {
+  text-transform: uppercase;
+  font-size: 2rem;
+  padding: 1rem;
+  border-bottom: 2px solid var(--color-lighter-grey);
+}
+
+.wrapper {
+  position: relative;
+}
+
+.home-box {
+  background-color: var(--color-purple);
+  border-radius: 50%;
+  position: absolute;
+  top: 78%;
+  left: 4%;
+  border: 0.4rem solid var(--color-white);
+}
+
+.avatar-section--home {
+  padding: 0.7rem;
+  width: 4rem;
+  z-index: 10;
+}
