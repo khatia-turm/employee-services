@@ -7,18 +7,16 @@
     <link rel="stylesheet" href="../css/main.css" />
 
     <link rel="icon" type="image/png" href="../svgs/favicon.svg" />
-    <title>LeverX Employee Services</title>
+    <title>Employee Services</title>
   </head>
   <body>
     <header class="header flex--horizontal">
       <button class="header--heading">
-        <h3 class="header--heading-secondary">leverx</h3>
         <h2 class="heading--heading-main">employee services</h2>
       </button>
       <button class="header--active-tab">Address Book</button>
       <div class="header--right flex--horizontal">
         <button class="header--support-button flex--horizontal">
-          <!-- support icon with header--support-icon -->
           <img
             src="../svgs/support-icon.svg"
             alt="support icon"
@@ -115,7 +113,6 @@
               </button>
 
               <button class="view--menu">
-                <!-- menu--icon -->
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="menu--icon"
@@ -140,28 +137,6 @@
               name="user"
               placeholder="Full Name"
               class="user-input basic-form--full"
-            />
-
-            <div class="grid-row-1-2">
-              <input
-                type="text"
-                name="name"
-                placeholder="Name"
-                class="user-input basic-form--name"
-              />
-              <input
-                type="text"
-                name="lastName"
-                placeholder="Last Name"
-                class="user-input basic-form--last"
-              />
-            </div>
-
-            <input
-              type="number"
-              name="id"
-              class="user-input input-id"
-              placeholder="ID"
             />
 
             <button type="submit" class="search--submit basic--submit">
@@ -202,13 +177,13 @@
                 />
               </div>
               <div class="flex-column">
-                <label for="skype">Skype</label>
+                <label for="zoom">Zoom</label>
 
                 <input
                   type="text"
-                  name="skype"
-                  id="skype"
-                  placeholder="SkypeID"
+                  name="zoom"
+                  id="zoom"
+                  placeholder="Zoom"
                   class="user-input"
                 />
               </div>
@@ -287,6 +262,6 @@
       </div>
     </main>
 
-    <script src="../script.js"></script>
+    <script type="module" src="../script.js"></script>
   </body>
 </html>

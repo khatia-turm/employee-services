@@ -155,7 +155,7 @@
   gap: var(--space-md);
   background-color: var(--color-white);
   border-radius: 1%;
-  height: 26rem;
+  height: 15rem;
 }
 
 .user-input {
@@ -216,6 +216,7 @@ label {
   color: var(--color-white);
   border-radius: 5%;
   font-size: 1rem;
+  width: 100%;
 }
 
 .grid-container {

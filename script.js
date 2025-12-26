@@ -1,3 +1,10 @@
+import {
+  formatDateOfBirth,
+  createRow,
+  createVisaRows,
+  switchPages,
+} from "./helpers.js";
+
 // SEARCH TOGGLES
 const searchContainer = document.querySelector(".search--container");
 const btnSearchBasic = document.querySelector(".search--basic");
@@ -14,13 +21,19 @@ const gridIcon = document.querySelector(".grid--icon");
 const listIcon = document.querySelector(".menu--icon");
 const container = document.querySelector(".grid-container");
 
-// SEARCH INPUTS
-let searchName = document.querySelector(".basic-form--name");
-let searchLast = document.querySelector(".basic-form--last");
+// BASIC SEARCH INPUTS
 let searchFull = document.querySelector(".basic-form--full");
-let searchID = document.querySelector(".input-id");
 let btnBasicSubmit = document.querySelector(".basic--submit");
 
+// ADVANCED SEARCH INPUTS
+const advFullName = document.getElementById("name");
+const advEmail = document.getElementById("email");
+const advPhone = document.getElementById("phone");
+const advZoom = document.getElementById("zoom");
+const advBuilding = document.getElementById("building");
+const advRoom = document.getElementById("room");
+const advDepartment = document.getElementById("department");
+const btnAdvanced = document.querySelector(".adv");
 // HEADER BUTTONS
 const btnHeader = document.querySelector(".header--heading");
 const loggedIn = document.querySelector(".header--logged-in");
@@ -42,9 +55,6 @@ async function getUsers() {
 
     users = await response.json();
 
-    // to test
-    console.log(users);
-
     if (window.location.pathname.endsWith("userDetails.html")) {
       loadUserDetails();
     } else {
@@ -64,13 +74,12 @@ function initApp() {
 }
 
 getUsers();
-console.log(users);
 
 // RENDERING USERS
 function renderUserBasicGrid(user) {
   let html = `
-        <div class="employee-ind employee-item" data-id="${user._id}">
-          <img
+        <div class="employee-ind employee-item" data-id="${user._id}">    
+        <img
             src="../${user.user_avatar}"
             alt="${user.first_name}"
             class="employee-grid--img"
@@ -139,100 +148,65 @@ function togglePage(showPage) {
 // IMPLEMENTING BASIC SEARCH
 
 function handleUserSearch() {
-  const firstName = searchName.value.trim().toLowerCase();
-  const lastName = searchLast.value.trim().toLowerCase();
   const fullName = searchFull.value.trim().toLowerCase();
-  const id = searchID.value.trim();
-  if (!firstName && !lastName && !fullName && !id) {
-    console.log("empty search, ignoring");
+
+  if (!firstName) {
     return;
   }
 
-  [searchName, searchLast, searchFull, searchID].forEach((i) => (i.value = ""));
-
   const user = users.find((u) => {
     const uFull = `${u.first_name} ${u.last_name}`.toLocaleLowerCase();
-    return (
-      String(u._id) === id &&
-      u.first_name.toLowerCase() === firstName &&
-      u.last_name.toLowerCase() === lastName &&
-      uFull.includes(fullName)
-    );
+    return uFull.includes(fullName);
   });
+  searchFull.value = "";
+
   if (!user) {
     togglePage(false);
   } else switchPages(`userDetails.html?id=${user._id}`);
-  // window.location.href = `userDetails.html?id=${user._id}`;
 }
 
 btnBasicSubmit?.addEventListener("click", (e) => {
   e.preventDefault();
-  console.log("clicked basic search");
   handleUserSearch();
 });
 
-// refactoring displayDetailedUser to remove duplicate code
-function formatDateOfBirth(date) {
-  const dat = new Date(date.year, date.month - 1, date.day);
-  return dat.toLocaleDateString(undefined, {
-    day: "numeric",
-    month: "short",
-    year: "numeric",
+// implementing advanced search
+function handleAdvancedSearch() {
+  const name = advFullName.value.trim().toLowerCase();
+  const email = advEmail.value.trim().toLowerCase();
+  const phone = advPhone.value.trim();
+  const zoom = advZoom.value.trim().toLowerCase();
+  const building = advBuilding.value;
+  const room = advRoom.value.trim();
+  const department = advDepartment.value;
+
+  const user = users.find((u) => {
+    const uFull = `${u.first_name} ${u.last_name}`.toLowerCase();
+
+    if (name && !uFull.includes(name)) return false;
+    if (email && !u.email.toLowerCase().includes(email)) return false;
+    if (phone && !u.phone.includes(phone)) return false;
+    if (zoom && !u.zoom_id.toLowerCase().includes(zoom)) return false;
+    if (building !== "any" && u.building !== building) return false;
+    if (room && u.room !== room) return false;
+    if (department !== "Any" && u.department !== department) return false;
+
+    return true;
   });
+
+  // clear inputs
+  [advFullName, advEmail, advPhone, advZoom, advRoom].forEach(
+    (i) => (i.value = "")
+  );
+  if (!user) {
+    togglePage(false);
+  } else switchPages(`userDetails.html?id=${user._id}`);
 }
 
-function createRow(icon, label, value, isLink = false) {
-  const content = isLink
-    ? `<strong><a href="${value}>${value}</a></strong>`
-    : `<p><strong>${value}</strong></p>`;
-  return `
-    <div class="details-section--row">
-      <div class="flex--horizontal">
-        <img src="../svgs/${icon}" class="details-section-icon" alt="${label} icon"/>
-        <p>${label}:</p>
-      </div>
-      ${content}
-    </div>
-  `;
-}
-
-function createVisaRows(visas) {
-  if (!Array.isArray(visas) || visas.length === 0)
-    return createRow("calendar-icon.svg", "Visa", "-");
-
-  const now = Date.now();
-  return visas
-    .map((v, index) => {
-      const start = new Date(v.start_date).toLocaleDateString(undefined, {
-        day: "numeric",
-        month: "short",
-        year: "numeric",
-      });
-
-      const end = new Date(v.end_date).toLocaleDateString(undefined, {
-        day: "numeric",
-        month: "short",
-        year: "numeric",
-      });
-
-      const expired = v.end_date < now ? " (expired)" : "";
-
-      const visaRow = createRow(
-        "visa-icon.svg",
-        `Visa ${index + 1}`,
-        `${v.issuing_country} - ${v.type}`
-      );
-
-      const dateRow = createRow(
-        "calendar-icon.svg",
-        `Visa ${index + 1} ${expired}`,
-        `${start} / ${end}`
-      );
-
-      return visaRow + dateRow;
-    })
-    .join("");
-}
+btnAdvanced?.addEventListener("click", (e) => {
+  e.preventDefault();
+  handleAdvancedSearch();
+});
 
 function displayDetailedUser(user) {
   const userDetails = document.querySelector(".user--details");
@@ -319,15 +293,8 @@ loggedIn?.addEventListener("click", () => {
   switchPages(`userDetails.html?id=${userId}`);
 });
 
-// interactive header
-
-function switchPages(page) {
-  window.location.href = page;
-}
 btnHeader?.addEventListener("click", () => switchPages("index.html"));
 addressBook?.addEventListener("click", () => switchPages("index.html"));
-
-// click on user in list opens its details page
 
 container?.addEventListener("click", (e) => {
   if (e.target.closest(".employee-item")) {
