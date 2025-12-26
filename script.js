@@ -150,7 +150,7 @@ function togglePage(showPage) {
 function handleUserSearch() {
   const fullName = searchFull.value.trim().toLowerCase();
 
-  if (!firstName) {
+  if (!fullName) {
     return;
   }
 
@@ -162,7 +162,7 @@ function handleUserSearch() {
 
   if (!user) {
     togglePage(false);
-  } else switchPages(`userDetails.html?id=${user._id}`);
+  } else switchPages(`./html/userDetails.html?id=${user._id}`);
 }
 
 btnBasicSubmit?.addEventListener("click", (e) => {
@@ -200,7 +200,7 @@ function handleAdvancedSearch() {
   );
   if (!user) {
     togglePage(false);
-  } else switchPages(`userDetails.html?id=${user._id}`);
+  } else switchPages(`./html/userDetails.html?id=${user._id}`);
 }
 
 btnAdvanced?.addEventListener("click", (e) => {
@@ -290,16 +290,16 @@ loggedIn?.addEventListener("click", () => {
   const userId = loggedIn.dataset.id;
   if (!userId) return;
 
-  switchPages(`userDetails.html?id=${userId}`);
+  switchPages(`./html/userDetails.html?id=${userId}`);
 });
 
-btnHeader?.addEventListener("click", () => switchPages("index.html"));
-addressBook?.addEventListener("click", () => switchPages("index.html"));
+btnHeader?.addEventListener("click", () => switchPages("../index.html"));
+addressBook?.addEventListener("click", () => switchPages("../index.html"));
 
 container?.addEventListener("click", (e) => {
   if (e.target.closest(".employee-item")) {
     const clickedId = e.target.closest(".employee-item").dataset.id;
-    switchPages(`userDetails.html?id=${clickedId}`);
+    switchPages(`./html/userDetails.html?id=${clickedId}`);
   }
 });
 
